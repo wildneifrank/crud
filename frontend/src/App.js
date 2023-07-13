@@ -40,9 +40,6 @@ function App() {
       <Container>
         <Title>USUÁRIOS</Title>
         <Form />
-        {users.map((item) => {
-          console.log(item.nome);
-        })}
         <Grid users={users} />
       </Container>
       <ToastContainer autoClose={3000} position={toast.POSITION.BOTTOM_LEFT} />

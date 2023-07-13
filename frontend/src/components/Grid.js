@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { faTrash, FaEdit } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { FaTrash, FaEdit } from "react-icons/fa";
 
 const Table = styled.table`
   width: 100%;
@@ -53,19 +53,21 @@ const Grid = ({ users }) => {
       </Thead>
       <Tbody>
         {users.map((item, index) => {
-          <Tr key={index}>
-            <Td width="30%">{item.nome}</Td>
-            <Td width="30%">{item.email}</Td>
-            <Td width="20%" onlyWeb>
-              {item.fone}
-            </Td>
-            <Td alignCenter width="5%">
-              <faEdit />
-            </Td>
-            <Td alignCenter width="5%">
-              <faTrash />
-            </Td>
-          </Tr>;
+          return (
+            <Tr key={index}>
+              <Td width="30%">{item.nome}</Td>
+              <Td width="30%">{item.email}</Td>
+              <Td width="20%" onlyWeb>
+                {item.fone}
+              </Td>
+              <Td alignCenter width="5%">
+                <FaEdit />
+              </Td>
+              <Td alignCenter width="5%">
+                <FaTrash />
+              </Td>
+            </Tr>
+          );
         })}
       </Tbody>
     </Table>
